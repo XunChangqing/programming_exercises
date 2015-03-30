@@ -1,3 +1,3 @@
-taocp
+Programming Exercises
 =====
-my repos for taocp exercises.
+my repos for programming exercises.
