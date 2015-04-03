@@ -11,10 +11,6 @@
   TypeName(const TypeName &);                                                  \
   void operator=(const TypeName &)
 
-//#define DISALLOW_COPY_AND_ASSIGN(TypeName)                                     \
-  //TypeName(const TypeName &) = delete;                                         \
-  //void operator=(const TypeName &) = delete
-
 namespace masa_text_query {
 class QueryResult;
 
@@ -23,7 +19,7 @@ public:
   using LineNo = std::vector<std::string>::size_type;
   // typedef std::vector<std::string>::size_type LineNo;
   explicit QueryText(std::ifstream &infile);
-  QueryResult Query(std::string &s);
+  QueryResult Query(const std::string &s) const;
 
   std::shared_ptr<std::vector<std::string>> file_;
   std::map<std::string, std::shared_ptr<std::set<QueryText::LineNo>>> wm_;
